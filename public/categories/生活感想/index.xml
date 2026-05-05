@@ -4,7 +4,15 @@
         <link>https://nora-hshhh.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%83%B3/</link>
         <description>生活感想 - 分类 - Songhan Huang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>norahuang408@gmail.com (Songhan Huang)</managingEditor>
-            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Tue, 05 May 2026 16:05:00 &#43;0800</lastBuildDate><atom:link href="https://nora-hshhh.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%83%B3/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Tue, 05 May 2026 17:28:22 &#43;0800</lastBuildDate><atom:link href="https://nora-hshhh.github.io/categories/%E7%94%9F%E6%B4%BB%E6%84%9F%E6%83%B3/" rel="self" type="application/rss+xml" /><item>
+    <title>五一平谷行记和一些巧思</title>
+    <link>https://nora-hshhh.github.io/posts/labor-day-traveling/</link>
+    <pubDate>Tue, 05 May 2026 17:28:22 &#43;0800</pubDate>
+    <author>norahuang408@gmail.com (Songhan Huang)</author>
+    <guid>https://nora-hshhh.github.io/posts/labor-day-traveling/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
     <title>Life Thought Example</title>
     <link>https://nora-hshhh.github.io/posts/life-thought-example/</link>
     <pubDate>Tue, 05 May 2026 16:05:00 &#43;0800</pubDate>
@@ -19,15 +27,6 @@
 <li>一次旅行、吃饭、穿搭、展览</li>
 <li>某个突然冒出来的灵感</li>
 </ul>]]></description>
-</item>
-<item>
-    <title>Hello</title>
-    <link>https://nora-hshhh.github.io/posts/hello/</link>
-    <pubDate>Fri, 01 May 2026 21:56:40 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/hello/</guid>
-    <description><![CDATA[<h1 id="我的第一篇文章">我的第一篇文章</h1>
-<p>Hello Hugo + LoveIt!</p>]]></description>
 </item>
 </channel>
 </rss>

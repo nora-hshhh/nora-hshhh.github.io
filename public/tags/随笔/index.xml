@@ -20,14 +20,5 @@
 <li>某个突然冒出来的灵感</li>
 </ul>]]></description>
 </item>
-<item>
-    <title>Hello</title>
-    <link>https://nora-hshhh.github.io/posts/hello/</link>
-    <pubDate>Fri, 01 May 2026 21:56:40 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/hello/</guid>
-    <description><![CDATA[<h1 id="我的第一篇文章">我的第一篇文章</h1>
-<p>Hello Hugo + LoveIt!</p>]]></description>
-</item>
 </channel>
 </rss>
