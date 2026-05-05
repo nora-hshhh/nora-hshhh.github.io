@@ -65,24 +65,12 @@
       .taxonomy-page {
         max-width: 900px;
         margin: 0 auto;
-        padding-top: 1.25rem;
+        padding-top: 1rem;
       }
 
       .taxonomy-page .single-title {
-        margin: 1.25rem 0 0.75rem;
-        font-size: clamp(1.8rem, 4vw, 2.35rem);
-      }
-
-      .taxonomy-intro {
-        margin: 0 auto 2.25rem;
-        max-width: 560px;
-        color: #777;
-        text-align: center;
-        line-height: 1.7;
-      }
-
-      body[theme="dark"] .taxonomy-intro {
-        color: #aaa;
+        margin: 1.1rem 0 1.75rem;
+        font-size: clamp(1.7rem, 3.2vw, 2.1rem) !important;
       }
 
       .taxonomy-tags {
@@ -106,6 +94,18 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.045);
       }
 
+      .taxonomy-tag:nth-child(3n + 1) {
+        background: rgba(239, 246, 255, 0.86);
+      }
+
+      .taxonomy-tag:nth-child(3n + 2) {
+        background: rgba(236, 253, 245, 0.86);
+      }
+
+      .taxonomy-tag:nth-child(3n) {
+        background: rgba(255, 247, 237, 0.86);
+      }
+
       body[theme="dark"] .taxonomy-tag {
         background: rgba(35, 35, 35, 0.72);
       }
@@ -118,8 +118,6 @@
 
     <div class="page archive taxonomy-page">
         <h2 class="single-title animate__animated animate__pulse animate__faster">所有标签</h2>
-
-        <p class="taxonomy-intro">Browse posts through smaller keywords and recurring topics.</p>
 
         <div class="taxonomy-tags"><a class="taxonomy-tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
                     <i class="fas fa-tag" aria-hidden="true"></i>

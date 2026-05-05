@@ -1,10 +1,17 @@
 {{- define "title" -}}
-    {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+    {{- if and (ne .Title "Categories") (ne .Title "Tags") -}}
+        {{- .Title }} - {{ .Site.Title -}}
+    {{- else -}}
+        {{- .Params.Title | default (T .Data.Plural) | default .Data.Plural | dict "Some" | T "allSome" }} - {{ .Site.Title -}}
+    {{- end -}}
 {{- end -}}
 
 {{- define "content" -}}
     {{- $taxonomies := .Data.Plural -}}
-    {{- $terms := .Data.Terms.ByCount -}}
+    {{- $terms := slice -}}
+    {{- with .Data.Terms -}}
+        {{- $terms = .ByCount -}}
+    {{- end -}}
     {{- $type := .Type -}}
     {{- $isTags := eq $taxonomies "tags" -}}
 
@@ -12,20 +19,53 @@
       .taxonomy-page {
         max-width: 900px;
         margin: 0 auto;
-        padding-top: 1.25rem;
+        padding-top: 1rem;
       }
 
       .taxonomy-page .single-title {
-        margin: 1.25rem 0 0.75rem;
-        font-size: clamp(1.8rem, 4vw, 2.35rem);
+        margin: 1.1rem 0 1.75rem;
+        font-size: clamp(1.7rem, 3.2vw, 2.1rem) !important;
       }
 
       .taxonomy-intro {
-        margin: 0 auto 2.25rem;
+        margin: -0.75rem auto 2rem;
         max-width: 560px;
         color: #777;
         text-align: center;
         line-height: 1.7;
+      }
+
+      .taxonomy-overview {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin: 0 0 1.3rem;
+      }
+
+      .taxonomy-stat {
+        padding: 0.95rem 1rem;
+        border: 1px solid rgba(128, 128, 128, 0.12);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .taxonomy-stat:nth-child(2) {
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .taxonomy-stat:nth-child(3) {
+        background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .taxonomy-stat strong {
+        display: block;
+        margin-bottom: 0.15rem;
+        font-size: 1.25rem;
+      }
+
+      .taxonomy-stat span {
+        color: #777;
+        font-size: 0.9rem;
       }
 
       .taxonomy-grid {
@@ -36,42 +76,100 @@
 
       .taxonomy-card {
         display: block;
-        min-height: 9.5rem;
+        position: relative;
+        overflow: hidden;
+        min-height: 11rem;
         padding: 1.35rem 1.45rem;
         border: 1px solid rgba(128, 128, 128, 0.14);
         border-radius: 8px;
-        background: rgba(255, 255, 255, 0.76);
-        box-shadow: 0 16px 42px rgba(0, 0, 0, 0.055);
+        background: linear-gradient(135deg, #eff6ff, #ffffff 58%);
+        box-shadow: 0 16px 42px rgba(31, 41, 55, 0.07);
         text-decoration: none;
       }
 
+      .taxonomy-card:nth-child(2n) {
+        background: linear-gradient(135deg, #ecfdf5, #ffffff 58%);
+      }
+
+      .taxonomy-card:nth-child(3n) {
+        background: linear-gradient(135deg, #fff7ed, #ffffff 58%);
+      }
+
+      .taxonomy-card::after {
+        content: "";
+        position: absolute;
+        right: -2.2rem;
+        bottom: -2.4rem;
+        width: 8rem;
+        height: 8rem;
+        border-radius: 50%;
+        background: rgba(47, 151, 201, 0.1);
+      }
+
+      .taxonomy-card:nth-child(2n)::after {
+        background: rgba(16, 185, 129, 0.12);
+      }
+
+      .taxonomy-card:nth-child(3n)::after {
+        background: rgba(245, 158, 11, 0.12);
+      }
+
       body[theme="dark"] .taxonomy-card {
-        background: rgba(35, 35, 35, 0.72);
+        background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(35, 35, 35, 0.78));
         box-shadow: 0 16px 42px rgba(0, 0, 0, 0.22);
       }
 
       .taxonomy-card-title {
+        position: relative;
+        z-index: 1;
         display: flex;
         align-items: center;
         gap: 0.55rem;
-        margin: 0 0 0.9rem;
+        margin: 0 0 0.75rem;
         font-size: 1.25rem;
+      }
+
+      .taxonomy-card-title i {
+        color: #2f97c9;
+      }
+
+      .taxonomy-card:nth-child(2n) .taxonomy-card-title i {
+        color: #10a37f;
+      }
+
+      .taxonomy-card:nth-child(3n) .taxonomy-card-title i {
+        color: #d97706;
       }
 
       .taxonomy-card-count {
         margin-left: auto;
-        color: #999;
-        font-size: 0.9rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.76);
+        color: #777;
+        font-size: 0.85rem;
         font-weight: 500;
       }
 
+      .taxonomy-card-desc {
+        position: relative;
+        z-index: 1;
+        margin: 0 0 0.8rem;
+        color: #666;
+        font-size: 0.95rem;
+        line-height: 1.65;
+      }
+
       .taxonomy-card-post {
+        position: relative;
+        z-index: 1;
         margin: 0.35rem 0;
         color: #666;
         font-size: 0.96rem;
       }
 
       body[theme="dark"] .taxonomy-card-post,
+      body[theme="dark"] .taxonomy-card-desc,
       body[theme="dark"] .taxonomy-intro {
         color: #aaa;
       }
@@ -106,8 +204,60 @@
         font-size: 0.85rem;
       }
 
+      .term-post-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 760px;
+      }
+
+      .term-post-card {
+        display: block;
+        padding: 1.2rem 1.35rem;
+        border: 1px solid rgba(128, 128, 128, 0.14);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(255, 255, 255, 0.96));
+        box-shadow: 0 14px 36px rgba(31, 41, 55, 0.06);
+        text-decoration: none;
+      }
+
+      .term-post-card:nth-child(2n) {
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(255, 255, 255, 0.96));
+      }
+
+      body[theme="dark"] .term-post-card {
+        background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(35, 35, 35, 0.78));
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+      }
+
+      .term-post-title {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 0.45rem;
+        font-size: 1.1rem;
+      }
+
+      .term-post-title i {
+        color: #2f97c9;
+      }
+
+      .term-post-meta {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      body[theme="dark"] .term-post-meta {
+        color: #aaa;
+      }
+
       @media (max-width: 680px) {
         .taxonomy-grid {
+          grid-template-columns: 1fr;
+        }
+
+        .taxonomy-overview {
           grid-template-columns: 1fr;
         }
 
@@ -119,10 +269,36 @@
 
     <div class="page archive taxonomy-page">
         <h2 class="single-title animate__animated animate__pulse animate__faster">
-            {{- .Params.Title | default (T $taxonomies) | default $taxonomies | dict "Some" | T "allSome" -}}
+            {{- if not $terms -}}
+                {{- if eq .Data.Singular "category" -}}
+                    <i class="far fa-folder-open" aria-hidden="true"></i>&nbsp;{{ .Title -}}
+                {{- else if eq .Data.Singular "tag" -}}
+                    <i class="fas fa-tag" aria-hidden="true"></i>&nbsp;{{ .Title -}}
+                {{- else -}}
+                    {{- .Title -}}
+                {{- end -}}
+            {{- else -}}
+                {{- .Params.Title | default (T $taxonomies) | default $taxonomies | dict "Some" | T "allSome" -}}
+            {{- end -}}
         </h2>
 
-        {{- if $isTags -}}
+        {{- if not $terms -}}
+            {{- if .Pages -}}
+                <div class="term-post-grid">
+                    {{- range .Pages.ByDate.Reverse -}}
+                        <a class="term-post-card" href="{{ .RelPermalink }}">
+                            <h3 class="term-post-title">
+                                <i class="far fa-file-alt" aria-hidden="true"></i>
+                                <span>{{ .Title | emojify }}</span>
+                            </h3>
+                            <div class="term-post-meta">
+                                {{- $.Site.Params.list.dateFormat | default "2006-01-02" | .Date.Format -}}
+                            </div>
+                        </a>
+                    {{- end -}}
+                </div>
+            {{- end -}}
+        {{- else if $isTags -}}
             <p class="taxonomy-intro">Browse posts through smaller keywords and recurring topics.</p>
             <div class="taxonomy-tags">
                 {{- range $terms -}}
@@ -137,7 +313,20 @@
                 {{- end -}}
             </div>
         {{- else -}}
-            <p class="taxonomy-intro">Two main shelves for the site: course notes for learning records, and life thoughts for everyday reflections.</p>
+            <div class="taxonomy-overview">
+                <div class="taxonomy-stat">
+                    <strong>{{ len $terms }}</strong>
+                    <span>categories</span>
+                </div>
+                <div class="taxonomy-stat">
+                    <strong>{{ len (where .Site.RegularPages "Section" "posts") }}</strong>
+                    <span>published posts</span>
+                </div>
+                <div class="taxonomy-stat">
+                    <strong>{{ len .Site.Taxonomies.tags }}</strong>
+                    <span>tags</span>
+                </div>
+            </div>
             <div class="taxonomy-grid">
                 {{- range $terms -}}
                     {{- $term := .Term -}}
@@ -149,6 +338,15 @@
                                 <span>{{ .Page.Title }}</span>
                                 <span class="taxonomy-card-count">{{ len $pages }}</span>
                             </h3>
+                            <p class="taxonomy-card-desc">
+                                {{- if eq .Page.Title "课程笔记" -}}
+                                    Learning notes, course records, and small technical checkpoints.
+                                {{- else if eq .Page.Title "生活感想" -}}
+                                    Everyday reflections, moments, and thoughts worth keeping.
+                                {{- else -}}
+                                    A small collection of posts under this category.
+                                {{- end -}}
+                            </p>
                             {{- range first 4 $pages -}}
                                 <p class="taxonomy-card-post">{{ .Title | emojify }}</p>
                             {{- end -}}
