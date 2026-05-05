@@ -21,8 +21,8 @@ theme = "LoveIt"
 
 [params.home.profile]
   enable = true
-  title = "你好，我是 Nora"
-  subtitle = "欢迎来到我的个人网站"
+  title = "Hi, I'm Songhan!"
+  subtitle = "Welcome to my world!"
   typeit = true
   social = true
   avatarURL = "/images/avatar.jpg"
