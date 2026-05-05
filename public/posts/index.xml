@@ -13,5 +13,21 @@
     <description><![CDATA[<h1 id="我的第一篇文章">我的第一篇文章</h1>
 <p>Hello Hugo + LoveIt!</p>]]></description>
 </item>
+<item>
+    <title>Course Note Example</title>
+    <link>https://nora-hshhh.github.io/posts/course-note-example/</link>
+    <pubDate>Fri, 01 May 2026 16:00:00 &#43;0800</pubDate>
+    <author>norahuang408@gmail.com (Songhan Huang)</author>
+    <guid>https://nora-hshhh.github.io/posts/course-note-example/</guid>
+    <description><![CDATA[<h1 id="course-note-example">Course Note Example</h1>
+<p>这里写课程笔记。</p>
+<p>可以记录：</p>
+<ul>
+<li>这节课的核心概念</li>
+<li>公式、推导或实验步骤</li>
+<li>自己还没想明白的问题</li>
+<li>后续复习时要看的资料</li>
+</ul>]]></description>
+</item>
 </channel>
 </rss>

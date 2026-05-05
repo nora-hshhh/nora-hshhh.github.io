@@ -12,6 +12,16 @@ theme = "LoveIt"
     url = "/posts/"
   [[menu.main]]
     weight = 2
+    identifier = "categories"
+    name = "Categories"
+    url = "/categories/"
+  [[menu.main]]
+    weight = 3
+    identifier = "tags"
+    name = "Tags"
+    url = "/tags/"
+  [[menu.main]]
+    weight = 4
     identifier = "about"
     name = "About"
     url = "/about/"
@@ -24,6 +34,9 @@ theme = "LoveIt"
 [params.author]
   name = "Songhan Huang"
   email = "norahuang408@gmail.com"
+
+[params.app]
+  title = "Songhan Huang"
 
 [params.header.title]
   name = "Songhan Huang"

@@ -1,21 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Songhan Huang</title>
-        <link>https://nora-hshhh.github.io/</link>
-        <description>Songhan Huang&#39;s personal website</description>
+        <title>硬件 - 标签 - Songhan Huang</title>
+        <link>https://nora-hshhh.github.io/tags/%E7%A1%AC%E4%BB%B6/</link>
+        <description>硬件 - 标签 - Songhan Huang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>norahuang408@gmail.com (Songhan Huang)</managingEditor>
-            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Fri, 01 May 2026 22:12:37 &#43;0800</lastBuildDate>
-            <atom:link href="https://nora-hshhh.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title>Hello</title>
-    <link>https://nora-hshhh.github.io/posts/hello/</link>
-    <pubDate>Fri, 01 May 2026 21:56:40 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/hello/</guid>
-    <description><![CDATA[<h1 id="我的第一篇文章">我的第一篇文章</h1>
-<p>Hello Hugo + LoveIt!</p>]]></description>
-</item>
-<item>
+            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Fri, 01 May 2026 16:00:00 &#43;0800</lastBuildDate><atom:link href="https://nora-hshhh.github.io/tags/%E7%A1%AC%E4%BB%B6/" rel="self" type="application/rss+xml" /><item>
     <title>Course Note Example</title>
     <link>https://nora-hshhh.github.io/posts/course-note-example/</link>
     <pubDate>Fri, 01 May 2026 16:00:00 &#43;0800</pubDate>
