@@ -1,0 +1,34 @@
+baseURL = "baseURL = "https://nora-hshhh.github.io/"
+"
+languageCode = "zh-cn"
+defaultContentLanguage = "zh-cn"
+title = "我的个人网站"
+theme = "LoveIt"
+
+[menu]
+  [[menu.main]]
+    weight = 1
+    identifier = "posts"
+    name = "posts"
+    url = "/posts/"
+  [[menu.main]]
+    weight = 2
+    identifier = "about"
+    name = "about"
+    url = "/about/"
+
+[params]
+  defaultTheme = "auto"
+
+[params.home.profile]
+  enable = true
+  title = "你好，我是 Nora"
+  subtitle = "欢迎来到我的个人网站"
+  typeit = true
+  social = true
+  avatarURL = "/images/avatar.jpg"
+
+[params.social]
+  GitHub = "https://github.com/nora-hshhh"
+  Email = "norahuang408@gmail.com"
+

@@ -1,0 +1,5 @@
+<section class="about-hero">
+  <h1>{{ .Get "title" }}</h1>
+  <p class="lead">{{ .Get "subtitle" }}</p>
+  <p>{{ .Inner | markdownify }}</p>
+</section>

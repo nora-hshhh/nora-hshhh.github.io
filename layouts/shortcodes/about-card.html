@@ -1,0 +1,5 @@
+<article class="about-card">
+  {{- with .Get "icon" -}}<i class="{{ . }}" aria-hidden="true"></i>{{- end -}}
+  <h3>{{ .Get "title" }}</h3>
+  <p>{{ .Inner | markdownify }}</p>
+</article>
