@@ -2,9 +2,9 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://localhost:1313/about/</loc><lastmod>2026-05-01T22:12:37&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/</loc><lastmod>2026-05-01T22:12:37&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/hello/</loc><lastmod>2026-05-01T21:56:40&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/posts/</loc><lastmod>2026-05-01T21:56:40&#43;08:00</lastmod></url><url>
-            <loc>http://localhost:1313/categories/</loc></url><url>
-            <loc>http://localhost:1313/tags/</loc></url></urlset>
+            <loc>https://nora-hshhh.github.io/about/</loc><lastmod>2026-05-01T22:12:37&#43;08:00</lastmod></url><url>
+            <loc>https://nora-hshhh.github.io/</loc><lastmod>2026-05-01T22:12:37&#43;08:00</lastmod></url><url>
+            <loc>https://nora-hshhh.github.io/posts/hello/</loc><lastmod>2026-05-01T21:56:40&#43;08:00</lastmod></url><url>
+            <loc>https://nora-hshhh.github.io/posts/</loc><lastmod>2026-05-01T21:56:40&#43;08:00</lastmod></url><url>
+            <loc>https://nora-hshhh.github.io/categories/</loc></url><url>
+            <loc>https://nora-hshhh.github.io/tags/</loc></url></urlset>

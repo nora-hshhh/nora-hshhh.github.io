@@ -1,5 +1,4 @@
-baseURL = "baseURL = "https://nora-hshhh.github.io/"
-"
+baseURL = "https://nora-hshhh.github.io/"
 languageCode = "zh-cn"
 defaultContentLanguage = "zh-cn"
 title = "我的个人网站"
@@ -31,4 +30,3 @@ theme = "LoveIt"
 [params.social]
   GitHub = "https://github.com/nora-hshhh"
   Email = "norahuang408@gmail.com"
-
