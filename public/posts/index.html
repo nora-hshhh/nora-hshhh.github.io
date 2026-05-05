@@ -61,13 +61,186 @@
             </a></div>
     </div>
 </header><main class="main">
-                <div class="container"><div class="page archive"><h2 class="single-title animate__animated animate__pulse animate__faster">所有文章</h2><h3 class="group-title">2026</h3><article class="archive-item">
-                        <a href="/posts/hello/" class="archive-item-link">Hello</a>
-                        <span class="archive-item-date">05-01</span>
-                    </article><article class="archive-item">
-                        <a href="/posts/course-note-example/" class="archive-item-link">Course Note Example</a>
-                        <span class="archive-item-date">05-01</span>
-                    </article></div></div>
+                <div class="container"><style>
+      .posts-page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 1rem;
+      }
+
+      .posts-page .single-title {
+        margin: 1.1rem 0 1.75rem;
+        font-size: clamp(1.7rem, 3.2vw, 2.1rem) !important;
+      }
+
+      .posts-overview {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 0.9rem;
+        margin: 0 0 1.3rem;
+      }
+
+      .posts-stat {
+        padding: 0.95rem 1rem;
+        border: 1px solid rgba(128, 128, 128, 0.12);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .posts-stat:nth-child(2) {
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .posts-stat:nth-child(3) {
+        background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(246, 248, 251, 0.92));
+      }
+
+      .posts-stat strong {
+        display: block;
+        margin-bottom: 0.15rem;
+        font-size: 1.25rem;
+      }
+
+      .posts-stat span {
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .posts-list {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 1rem;
+        margin: 0 auto;
+        max-width: 780px;
+      }
+
+      .post-list-card {
+        display: block;
+        padding: 1.2rem 1.35rem;
+        border: 1px solid rgba(128, 128, 128, 0.14);
+        border-radius: 8px;
+        background: linear-gradient(135deg, rgba(239, 246, 255, 0.95), rgba(255, 255, 255, 0.96));
+        box-shadow: 0 14px 36px rgba(31, 41, 55, 0.06);
+        text-decoration: none;
+      }
+
+      .post-list-card:nth-child(2n) {
+        background: linear-gradient(135deg, rgba(236, 253, 245, 0.95), rgba(255, 255, 255, 0.96));
+      }
+
+      .post-list-card:nth-child(3n) {
+        background: linear-gradient(135deg, rgba(255, 247, 237, 0.95), rgba(255, 255, 255, 0.96));
+      }
+
+      body[theme="dark"] .post-list-card {
+        background: linear-gradient(135deg, rgba(31, 41, 55, 0.95), rgba(35, 35, 35, 0.78));
+        box-shadow: 0 14px 36px rgba(0, 0, 0, 0.22);
+      }
+
+      .post-list-title {
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        margin: 0 0 0.45rem;
+        font-size: 1.12rem;
+      }
+
+      .post-list-title i {
+        color: #2f97c9;
+      }
+
+      .post-list-meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        color: #777;
+        font-size: 0.9rem;
+      }
+
+      .post-list-pill {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.3rem;
+      }
+
+      body[theme="dark"] .posts-stat span,
+      body[theme="dark"] .post-list-meta {
+        color: #aaa;
+      }
+
+      @media (max-width: 680px) {
+        .posts-overview {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style><div class="page archive posts-page">
+        <h2 class="single-title animate__animated animate__pulse animate__faster">所有文章</h2>
+
+        <div class="posts-overview">
+            <div class="posts-stat">
+                <strong>3</strong>
+                <span>published posts</span>
+            </div>
+            <div class="posts-stat">
+                <strong>2</strong>
+                <span>categories</span>
+            </div>
+            <div class="posts-stat">
+                <strong>4</strong>
+                <span>tags</span>
+            </div>
+        </div>
+
+        <div class="posts-list"><a class="post-list-card" href="/posts/life-thought-example/">
+                    <h3 class="post-list-title">
+                        <i class="far fa-file-alt" aria-hidden="true"></i>
+                        <span>Life Thought Example</span>
+                    </h3>
+                    <div class="post-list-meta">
+                        <span class="post-list-pill">
+                            <i class="far fa-calendar" aria-hidden="true"></i>05-05</span><span class="post-list-pill">
+                                <i class="far fa-folder" aria-hidden="true"></i>
+                                生活感想
+                            </span><span class="post-list-pill">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                随笔
+                            </span><span class="post-list-pill">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                生活
+                            </span></div>
+                </a><a class="post-list-card" href="/posts/hello/">
+                    <h3 class="post-list-title">
+                        <i class="far fa-file-alt" aria-hidden="true"></i>
+                        <span>Hello</span>
+                    </h3>
+                    <div class="post-list-meta">
+                        <span class="post-list-pill">
+                            <i class="far fa-calendar" aria-hidden="true"></i>05-01</span><span class="post-list-pill">
+                                <i class="far fa-folder" aria-hidden="true"></i>
+                                生活感想
+                            </span><span class="post-list-pill">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                随笔
+                            </span></div>
+                </a><a class="post-list-card" href="/posts/course-note-example/">
+                    <h3 class="post-list-title">
+                        <i class="far fa-file-alt" aria-hidden="true"></i>
+                        <span>Course Note Example</span>
+                    </h3>
+                    <div class="post-list-meta">
+                        <span class="post-list-pill">
+                            <i class="far fa-calendar" aria-hidden="true"></i>05-01</span><span class="post-list-pill">
+                                <i class="far fa-folder" aria-hidden="true"></i>
+                                课程笔记
+                            </span><span class="post-list-pill">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                硬件
+                            </span><span class="post-list-pill">
+                                <i class="fas fa-tag" aria-hidden="true"></i>
+                                学习笔记
+                            </span></div>
+                </a></div>
+    </div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.161.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
                 </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright" aria-hidden="true"></i><span itemprop="copyrightYear">2022 - 2026</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Songhan Huang</a></span></div>
