@@ -1,6 +1,6 @@
 +++
 date = '2026-05-05T16:05:00+08:00'
-draft = true
+draft = false
 title = 'Life Thought Example'
 categories = ['生活感想']
 tags = ['随笔', '生活']
