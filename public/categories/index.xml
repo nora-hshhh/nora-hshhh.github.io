@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on 我的个人网站</title>
+    <title>Categories on Songhan Huang</title>
     <link>https://nora-hshhh.github.io/categories/</link>
-    <description>Recent content in Categories on 我的个人网站</description>
+    <description>Recent content in Categories on Songhan Huang</description>
     <generator>Hugo</generator>
     <language>zh-cn</language>
+    <managingEditor>norahuang408@gmail.com (Songhan Huang)</managingEditor>
+    <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster>
     <atom:link href="https://nora-hshhh.github.io/categories/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

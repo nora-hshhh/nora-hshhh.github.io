@@ -32,6 +32,14 @@ Food, travel, fashion, and the small pleasures of everyday life.
 {{< /about-card >}}
 {{< /about-section >}}
 
+{{< about-section title="Education" icon="fas fa-graduation-cap" columns="two" >}}
+{{< education-card title="High School" icon="fas fa-school" school="Beijing No.4 High School" time="2022.9 - 2024.6" >}}{{< /education-card >}}
+
+{{< education-card title="Undergraduate" icon="fas fa-university" school="Peking University, School of EECS" time="2024.9 - Present" >}}
+I am majoring in *Applied Physics* (Electronic Experimental Class).
+{{< /education-card >}}
+{{< /about-section >}}
+
 {{< about-section title="What This Site Is For" icon="fas fa-book-open" >}}
 {{< about-card title="A Public Notebook" icon="fas fa-pen-nib" >}}
 This site will gradually become my public notebook. I hope it will be more than a portfolio; I want it to trace how I learn, build, and think over time.
@@ -51,7 +59,9 @@ Occasional life notes, scattered thoughts, and little sparks of inspiration.
 {{< /about-section >}}
 
 {{< about-note title="Where I Am Now" icon="fas fa-seedling" >}}
-Right now, I am polishing this site from something that merely works into a place that genuinely feels like mine. If you are reading this, it is still growing, and I am glad you are here to witness the process.
+- I am still learning about hardware and building up my understanding step by step.
+- I am curious about how AI can make everyday life and work more creative, efficient, and humane.
+- I love life itself: the tiny details, the unexpected joys, and the process of slowly becoming someone new.
 {{< /about-note >}}
 
 {{< about-note title="Contact" icon="far fa-paper-plane" >}}
