@@ -61,7 +61,79 @@
             </a></div>
     </div>
 </header><main class="main">
-                <div class="container"><div class="page archive"><h2 class="single-title animate__animated animate__pulse animate__faster">所有标签</h2><div class="tag-cloud-tags"><a href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">学习笔记 <sup>1</sup></a><a href="/tags/%E7%A1%AC%E4%BB%B6/">硬件 <sup>1</sup></a><a href="/tags/%E9%9A%8F%E7%AC%94/">随笔 <sup>1</sup></a></div>
+                <div class="container"><style>
+      .taxonomy-page {
+        max-width: 900px;
+        margin: 0 auto;
+        padding-top: 1.25rem;
+      }
+
+      .taxonomy-page .single-title {
+        margin: 1.25rem 0 0.75rem;
+        font-size: clamp(1.8rem, 4vw, 2.35rem);
+      }
+
+      .taxonomy-intro {
+        margin: 0 auto 2.25rem;
+        max-width: 560px;
+        color: #777;
+        text-align: center;
+        line-height: 1.7;
+      }
+
+      body[theme="dark"] .taxonomy-intro {
+        color: #aaa;
+      }
+
+      .taxonomy-tags {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 0.8rem;
+        margin: 0 auto;
+        max-width: 760px;
+      }
+
+      .taxonomy-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0.55rem 0.85rem;
+        border: 1px solid rgba(128, 128, 128, 0.18);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.72);
+        text-decoration: none;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.045);
+      }
+
+      body[theme="dark"] .taxonomy-tag {
+        background: rgba(35, 35, 35, 0.72);
+      }
+
+      .taxonomy-tag-count {
+        color: #999;
+        font-size: 0.85rem;
+      }
+    </style>
+
+    <div class="page archive taxonomy-page">
+        <h2 class="single-title animate__animated animate__pulse animate__faster">所有标签</h2>
+
+        <p class="taxonomy-intro">Browse posts through smaller keywords and recurring topics.</p>
+
+        <div class="taxonomy-tags"><a class="taxonomy-tag" href="/tags/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/">
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    <span>学习笔记</span>
+                    <span class="taxonomy-tag-count">1</span>
+                </a><a class="taxonomy-tag" href="/tags/%E7%A1%AC%E4%BB%B6/">
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    <span>硬件</span>
+                    <span class="taxonomy-tag-count">1</span>
+                </a><a class="taxonomy-tag" href="/tags/%E9%9A%8F%E7%AC%94/">
+                    <i class="fas fa-tag" aria-hidden="true"></i>
+                    <span>随笔</span>
+                    <span class="taxonomy-tag-count">1</span>
+                </a></div>
     </div></div>
             </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">由 <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.161.1">Hugo</a> 强力驱动 | 主题 - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 1.0.0"><i class="far fa-kiss-wink-heart" aria-hidden="true"></i> LoveIt</a>
