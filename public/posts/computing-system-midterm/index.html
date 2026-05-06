@@ -7,9 +7,8 @@
         <title>计算系统期中cheating sheet分享 - Songhan Huang</title><meta name="Description" content="Songhan Huang&#39;s personal website"><meta property="og:url" content="https://nora-hshhh.github.io/posts/computing-system-midterm/">
   <meta property="og:site_name" content="Songhan Huang">
   <meta property="og:title" content="计算系统期中cheating sheet分享">
-  <meta property="og:description" content="Computing System Midterm Write your post here.
-implement 注：全部是1-based
-bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;&amp; order) { vector&lt;int&gt; indeg(n&#43;1); queue&lt;int&gt; q; order.clear(); for (int u = 1; u &lt;= n; u&#43;&#43;) for (int v : adj[u]) indeg[v]&#43;&#43;; for (int i = 1; i &lt;= n; i&#43;&#43;) if (!indeg[i]) q.push(i); while (!q.empty()) { int u = q.front(); q.pop(); order.push_back(u); for (int v : adj[u]) if (--indeg[v] == 0) q.push(v); } return order.size() == n; // false: cycle }//quick power long long qpow(long long a, long long k) { long long res = 1; while (k &gt; 0) { if (k &amp; 1) res = res * a % MOD; a = a * a % MOD; k &gt;&gt;= 1; } return res; } // res 不能初始化成 a，否则 K=1 时会算成 a^2。 SCC">
+  <meta property="og:description" content="Computing System Midterm implement 注：全部是1-based
+bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;&amp; order) { vector&lt;int&gt; indeg(n&#43;1); queue&lt;int&gt; q; order.clear(); for (int u = 1; u &lt;= n; u&#43;&#43;) for (int v : adj[u]) indeg[v]&#43;&#43;; for (int i = 1; i &lt;= n; i&#43;&#43;) if (!indeg[i]) q.push(i); while (!q.empty()) { int u = q.front(); q.pop(); order.push_back(u); for (int v : adj[u]) if (--indeg[v] == 0) q.push(v); } return order.size() == n; // false: cycle }//quick power long long qpow(long long a, long long k) { long long res = 1; while (k &gt; 0) { if (k &amp; 1) res = res * a % MOD; a = a * a % MOD; k &gt;&gt;= 1; } return res; } // res 不能初始化成 a，否则 K=1 时会算成 a^2。 SCC // kosaraju, 1-based vector&lt;vector&lt;int&gt;&gt; adj(n&#43;1),adjinv(n&#43;1), scc(1); vector&lt;int&gt; visited(n&#43;1), post_order, scc_temp, scc_index(n&#43;1,-1); void DFS1(int u){ visited[u]=1; for(int v:adj[u]) if(!visited[v]) DFS1(v); post_order.push_back(u);} void DFS2(int u){ visited[u]=1; scc_temp.push_back(u); for(int v:adjinv[u]) if(!visited[v]) DFS2(v);} void kosaraju(int n){ post_order.clear(); scc.clear(); scc.push_back({}); scc_index.assign(n&#43;1,-1); visited.assign(n&#43;1,0); for(int i=1;i&lt;=n;i&#43;&#43;) { if(!visited[i]) DFS1(i);} visited.assign(n&#43;1,0); for(int i=post_order.size()-1;i&gt;=0;i--) if(!visited[post_order[i]]){ scc_temp.clear(); DFS2(post_order[i]); scc.push_back(scc_temp); for(int x:scc_temp) scc_index[x]= scc.size()-1; } } // SCC用途：缩点成DAG&#43;dp // 连边：if(scc_index[u]!=scc_index[v]) // scc_adj[scc_index[u]].push_back(scc_index[v]); // 去重：每个v在DAG:sort(v.begin(),v.end()); // v.erase(unique(v.begin(),v.end()),v.end()); // DP：toposort&#43; dp[v]=max(dp[v], dp[u]&#43;weight[v]) shortest path struct Edge{int u,v,w;}; const long long INF = (1LL&lt;&lt;60);// Bellman-Ford: 有负权, 边集, 1-based vector&lt;Edge&gt; edge(m); vector&lt;long long&gt; dist(n&#43;1, INF); dist[s]=0; for(int i=0;i&lt;=n;i&#43;&#43;) for(auto e:edge) if(dist[e.u]!=INF &amp;&amp; dist[e.u]&#43;e.w&lt;dist[e.v]) dist[e.v]=dist[e.u]&#43;e.w; // neg cycle reachable from s: for(auto e:edge) if(dist[e.u]!=INF &amp;&amp; dist[e.u]&#43;e.w&lt;dist[e.v]) {/* has neg cycle */} //最短路数量 init: cnt[s]=1; last[u][v]=0 // paths already contributed from u to v // if nd&lt;dist[v]: cnt[v]=cnt[u]; clear last[*][v]; last[u][v]=cnt[u] // else if nd==dist[v]: cnt[v]&#43;=cnt[u]-last[u][v]; last[u][v]=cnt[u] // Dijkstra: 无负权, 邻接表adj[u] = {v,w}, 1-based vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj(n&#43;1); vector&lt;long long&gt; dist(n&#43;1,INF); priority_queue&lt;pair&lt;long long,int&gt;, vector&lt;pair&lt;long long,int&gt;&gt;, greater&lt;pair&lt;long long,int&gt;&gt;&gt; pq; dist[s]=0; pq.push({0,s}); while(!pq.empty()){ auto [d,u]=pq.top(); pq.pop(); if(d!=dist[u]) continue; // 过期 for(auto [v,w]:adj[u]){ if(d&#43;w&lt;dist[v]) { dist[v]=d&#43;w;pq.push({dist[v],v});} } } // 最短路数量：正权图中可同步维护 cnt // init: cnt[s]=1 // if dist[u]&#43;w &lt; dist[v]: dist[v]=dist[u]&#43;w; cnt[v]=cnt[u]; push(v) // else if dist[u]&#43;w == dist[v]: cnt[v]=(cnt[v]&#43;cnt[u])%MOD //Floyd：任意两点最短路, n小, O(n^3) vector&lt;vector&lt;long long&gt;&gt; dist(n&#43;1, vector&lt;long long&gt;(n&#43;1, INF)); for(int i=1;i&lt;=n;i&#43;&#43;) dist[i][i]=0; for(auto e:edge) dist[e.u][e.v]=min(dist[e.u][e.v], (long long)e.w); for(int k=1;k&lt;=n;k&#43;&#43;) for(int i=1;i&lt;=n;i&#43;&#43;) for(int j=1;j&lt;=n;j&#43;&#43;) if(dist[i][k]!=INF &amp;&amp; dist[k][j]!=INF) dist[i][j]=min(dist[i][j], dist[i][k]&#43;dist[k][j]);minimum spanning tree // Prim: 任意起点, 邻接表, check cnt==n vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj(n&#43;1);//{v,w} priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq; // {w,v} vector&lt;int&gt; visited(n&#43;1); long long cost=0; int cnt=0; pq.push({0,1}); while(!pq.empty()){ auto [w,u]=pq.top(); pq.pop(); if(visited[u]) continue; visited[u]=1; cost&#43;=w; cnt&#43;&#43;; for(auto [v,nw]:adj[u]) if(!visited[v]) pq.push({nw,v}); } // cnt&lt;n: graph disconnected">
   <meta property="og:locale" content="zh_cn">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
@@ -19,9 +18,8 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
 
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="计算系统期中cheating sheet分享">
-  <meta name="twitter:description" content="Computing System Midterm Write your post here.
-implement 注：全部是1-based
-bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;&amp; order) { vector&lt;int&gt; indeg(n&#43;1); queue&lt;int&gt; q; order.clear(); for (int u = 1; u &lt;= n; u&#43;&#43;) for (int v : adj[u]) indeg[v]&#43;&#43;; for (int i = 1; i &lt;= n; i&#43;&#43;) if (!indeg[i]) q.push(i); while (!q.empty()) { int u = q.front(); q.pop(); order.push_back(u); for (int v : adj[u]) if (--indeg[v] == 0) q.push(v); } return order.size() == n; // false: cycle }//quick power long long qpow(long long a, long long k) { long long res = 1; while (k &gt; 0) { if (k &amp; 1) res = res * a % MOD; a = a * a % MOD; k &gt;&gt;= 1; } return res; } // res 不能初始化成 a，否则 K=1 时会算成 a^2。 SCC">
+  <meta name="twitter:description" content="Computing System Midterm implement 注：全部是1-based
+bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;&amp; order) { vector&lt;int&gt; indeg(n&#43;1); queue&lt;int&gt; q; order.clear(); for (int u = 1; u &lt;= n; u&#43;&#43;) for (int v : adj[u]) indeg[v]&#43;&#43;; for (int i = 1; i &lt;= n; i&#43;&#43;) if (!indeg[i]) q.push(i); while (!q.empty()) { int u = q.front(); q.pop(); order.push_back(u); for (int v : adj[u]) if (--indeg[v] == 0) q.push(v); } return order.size() == n; // false: cycle }//quick power long long qpow(long long a, long long k) { long long res = 1; while (k &gt; 0) { if (k &amp; 1) res = res * a % MOD; a = a * a % MOD; k &gt;&gt;= 1; } return res; } // res 不能初始化成 a，否则 K=1 时会算成 a^2。 SCC // kosaraju, 1-based vector&lt;vector&lt;int&gt;&gt; adj(n&#43;1),adjinv(n&#43;1), scc(1); vector&lt;int&gt; visited(n&#43;1), post_order, scc_temp, scc_index(n&#43;1,-1); void DFS1(int u){ visited[u]=1; for(int v:adj[u]) if(!visited[v]) DFS1(v); post_order.push_back(u);} void DFS2(int u){ visited[u]=1; scc_temp.push_back(u); for(int v:adjinv[u]) if(!visited[v]) DFS2(v);} void kosaraju(int n){ post_order.clear(); scc.clear(); scc.push_back({}); scc_index.assign(n&#43;1,-1); visited.assign(n&#43;1,0); for(int i=1;i&lt;=n;i&#43;&#43;) { if(!visited[i]) DFS1(i);} visited.assign(n&#43;1,0); for(int i=post_order.size()-1;i&gt;=0;i--) if(!visited[post_order[i]]){ scc_temp.clear(); DFS2(post_order[i]); scc.push_back(scc_temp); for(int x:scc_temp) scc_index[x]= scc.size()-1; } } // SCC用途：缩点成DAG&#43;dp // 连边：if(scc_index[u]!=scc_index[v]) // scc_adj[scc_index[u]].push_back(scc_index[v]); // 去重：每个v在DAG:sort(v.begin(),v.end()); // v.erase(unique(v.begin(),v.end()),v.end()); // DP：toposort&#43; dp[v]=max(dp[v], dp[u]&#43;weight[v]) shortest path struct Edge{int u,v,w;}; const long long INF = (1LL&lt;&lt;60);// Bellman-Ford: 有负权, 边集, 1-based vector&lt;Edge&gt; edge(m); vector&lt;long long&gt; dist(n&#43;1, INF); dist[s]=0; for(int i=0;i&lt;=n;i&#43;&#43;) for(auto e:edge) if(dist[e.u]!=INF &amp;&amp; dist[e.u]&#43;e.w&lt;dist[e.v]) dist[e.v]=dist[e.u]&#43;e.w; // neg cycle reachable from s: for(auto e:edge) if(dist[e.u]!=INF &amp;&amp; dist[e.u]&#43;e.w&lt;dist[e.v]) {/* has neg cycle */} //最短路数量 init: cnt[s]=1; last[u][v]=0 // paths already contributed from u to v // if nd&lt;dist[v]: cnt[v]=cnt[u]; clear last[*][v]; last[u][v]=cnt[u] // else if nd==dist[v]: cnt[v]&#43;=cnt[u]-last[u][v]; last[u][v]=cnt[u] // Dijkstra: 无负权, 邻接表adj[u] = {v,w}, 1-based vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj(n&#43;1); vector&lt;long long&gt; dist(n&#43;1,INF); priority_queue&lt;pair&lt;long long,int&gt;, vector&lt;pair&lt;long long,int&gt;&gt;, greater&lt;pair&lt;long long,int&gt;&gt;&gt; pq; dist[s]=0; pq.push({0,s}); while(!pq.empty()){ auto [d,u]=pq.top(); pq.pop(); if(d!=dist[u]) continue; // 过期 for(auto [v,w]:adj[u]){ if(d&#43;w&lt;dist[v]) { dist[v]=d&#43;w;pq.push({dist[v],v});} } } // 最短路数量：正权图中可同步维护 cnt // init: cnt[s]=1 // if dist[u]&#43;w &lt; dist[v]: dist[v]=dist[u]&#43;w; cnt[v]=cnt[u]; push(v) // else if dist[u]&#43;w == dist[v]: cnt[v]=(cnt[v]&#43;cnt[u])%MOD //Floyd：任意两点最短路, n小, O(n^3) vector&lt;vector&lt;long long&gt;&gt; dist(n&#43;1, vector&lt;long long&gt;(n&#43;1, INF)); for(int i=1;i&lt;=n;i&#43;&#43;) dist[i][i]=0; for(auto e:edge) dist[e.u][e.v]=min(dist[e.u][e.v], (long long)e.w); for(int k=1;k&lt;=n;k&#43;&#43;) for(int i=1;i&lt;=n;i&#43;&#43;) for(int j=1;j&lt;=n;j&#43;&#43;) if(dist[i][k]!=INF &amp;&amp; dist[k][j]!=INF) dist[i][j]=min(dist[i][j], dist[i][k]&#43;dist[k][j]);minimum spanning tree // Prim: 任意起点, 邻接表, check cnt==n vector&lt;vector&lt;pair&lt;int,int&gt;&gt;&gt; adj(n&#43;1);//{v,w} priority_queue&lt;pair&lt;int,int&gt;, vector&lt;pair&lt;int,int&gt;&gt;, greater&lt;pair&lt;int,int&gt;&gt;&gt; pq; // {w,v} vector&lt;int&gt; visited(n&#43;1); long long cost=0; int cnt=0; pq.push({0,1}); while(!pq.empty()){ auto [w,u]=pq.top(); pq.pop(); if(visited[u]) continue; visited[u]=1; cost&#43;=w; cnt&#43;&#43;; for(auto [v,nw]:adj[u]) if(!visited[v]) pq.push({nw,v}); } // cnt&lt;n: graph disconnected">
 <meta name="application-name" content="Songhan Huang">
 <meta name="apple-mobile-web-app-title" content="Songhan Huang">
 <meta name="referrer" content="no-referrer" /><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -37,7 +35,7 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https:\/\/nora-hshhh.github.io\/posts\/computing-system-midterm\/"
-        },"genre": "posts","keywords": "计算系统","wordcount":  1016 ,
+        },"genre": "posts","keywords": "计算系统","wordcount":  1012 ,
         "url": "https:\/\/nora-hshhh.github.io\/posts\/computing-system-midterm\/","datePublished": "2026-05-06T14:41:22+08:00","dateModified": "2026-05-06T14:41:22+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -90,20 +88,26 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
             <div class="toc-content" id="toc-content-auto"></div>
         </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">计算系统期中cheating sheet分享</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle" aria-hidden="true"></i>Songhan Huang</a></span>&nbsp;<span class="post-category">收录于 <a href="/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"><i class="far fa-folder" aria-hidden="true"></i>课程笔记</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-05-06">2026-05-06</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 1016 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt" aria-hidden="true"></i>&nbsp;<time datetime="2026-05-06">2026-05-06</time>&nbsp;<i class="fas fa-pencil-alt" aria-hidden="true"></i>&nbsp;约 1012 字&nbsp;
                 <i class="far fa-clock" aria-hidden="true"></i>&nbsp;预计阅读 3 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="">
                 <div class="details-summary toc-title">
                     <span>目录</span>
                     <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
                 </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#implement">implement</a></li>
+    <li><a href="#scc">SCC</a></li>
+    <li><a href="#shortest-path">shortest path</a></li>
+    <li><a href="#minimum-spanning-tree">minimum spanning tree</a></li>
+  </ul>
+</nav></div>
             </div><div class="content" id="content"><h1 id="computing-system-midterm">Computing System Midterm</h1>
-<p>Write your post here.</p>
 <!-- raw HTML omitted -->
 <!-- raw HTML omitted -->
-<p>implement
-注：全部是1-based</p>
+<h2 id="implement">implement</h2>
+<p>注：全部是1-based</p>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-cpp">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
@@ -142,7 +146,7 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span><span class="line"><span class="cl"><span class="c1">// res 不能初始化成 a，否则 K=1 时会算成 a^2。
 </span></span></span></code></pre></div></div>
-<p>SCC</p>
+<h2 id="scc">SCC</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-cpp">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
@@ -181,7 +185,7 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
 </span></span></span><span class="line"><span class="cl"><span class="c1">// v.erase(unique(v.begin(),v.end()),v.end());
 </span></span></span><span class="line"><span class="cl"><span class="c1">// DP：toposort+ dp[v]=max(dp[v], dp[u]+weight[v])
 </span></span></span></code></pre></div></div>
-<p>shortest path</p>
+<h2 id="shortest-path">shortest path</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-cpp">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>
@@ -248,7 +252,7 @@ bool toposort(int n, vector&lt;vector&lt;int&gt;&gt;&amp; adj, vector&lt;int&gt;
 </span></span><span class="line"><span class="cl">        <span class="k">for</span><span class="p">(</span><span class="kt">int</span> <span class="n">j</span><span class="o">=</span><span class="mi">1</span><span class="p">;</span><span class="n">j</span><span class="o">&lt;=</span><span class="n">n</span><span class="p">;</span><span class="n">j</span><span class="o">++</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">            <span class="k">if</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">!=</span><span class="n">INF</span> <span class="o">&amp;&amp;</span> <span class="n">dist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">!=</span><span class="n">INF</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">                <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">]</span><span class="o">=</span><span class="n">min</span><span class="p">(</span><span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">j</span><span class="p">],</span> <span class="n">dist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="n">k</span><span class="p">]</span><span class="o">+</span><span class="n">dist</span><span class="p">[</span><span class="n">k</span><span class="p">][</span><span class="n">j</span><span class="p">]);</span></span></span></code></pre></div></div>
-<p>minimum spanning tree</p>
+<h2 id="minimum-spanning-tree">minimum spanning tree</h2>
 <div class="code-block code-line-numbers open" style="counter-reset: code-block 0">
     <div class="code-header language-cpp">
         <span class="code-title"><i class="arrow fas fa-angle-right" aria-hidden="true"></i></span>

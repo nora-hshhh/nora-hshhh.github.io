@@ -8,7 +8,6 @@ tags = ['计算系统']
 
 # Computing System Midterm
 
-Write your post here.
 <style>
 @page {
   size: A4 portrait;
@@ -71,7 +70,7 @@ pre.hljs code {
 }
 </style>
 
-implement
+## implement
 注：全部是1-based
 ```cpp
 bool toposort(int n, vector<vector<int>>& adj, vector<int>& order) {
@@ -105,7 +104,7 @@ long long qpow(long long a, long long k) {
 // res 不能初始化成 a，否则 K=1 时会算成 a^2。
 ```
 
-SCC
+## SCC
 ```cpp
 // kosaraju, 1-based
 vector<vector<int>> adj(n+1),adjinv(n+1), scc(1);
@@ -140,7 +139,7 @@ void kosaraju(int n){
 // v.erase(unique(v.begin(),v.end()),v.end());
 // DP：toposort+ dp[v]=max(dp[v], dp[u]+weight[v])
 ```
-shortest path
+## shortest path
 ```cpp
 struct Edge{int u,v,w;};
 const long long INF = (1LL<<60);
@@ -194,7 +193,7 @@ for(int k=1;k<=n;k++)
                 dist[i][j]=min(dist[i][j], dist[i][k]+dist[k][j]);
 ```
 
-minimum spanning tree
+## minimum spanning tree
 ```cpp
 // Prim: 任意起点, 邻接表, check cnt==n
 vector<vector<pair<int,int>>> adj(n+1);//{v,w}
