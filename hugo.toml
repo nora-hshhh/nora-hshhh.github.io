@@ -1,5 +1,6 @@
 baseURL = "https://nora-hshhh.github.io/"
 languageCode = "zh-cn"
+hasCJKLanguage = true
 defaultContentLanguage = "zh-cn"
 title = "Songhan Huang"
 theme = "LoveIt"
