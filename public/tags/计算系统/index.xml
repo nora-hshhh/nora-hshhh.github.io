@@ -1,10 +1,10 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>所有文章 - Songhan Huang</title>
-        <link>https://nora-hshhh.github.io/posts/</link>
-        <description>所有文章 | Songhan Huang</description>
+        <title>计算系统 - 标签 - Songhan Huang</title>
+        <link>https://nora-hshhh.github.io/tags/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F/</link>
+        <description>计算系统 - 标签 - Songhan Huang</description>
         <generator>Hugo -- gohugo.io</generator><language>zh-cn</language><managingEditor>norahuang408@gmail.com (Songhan Huang)</managingEditor>
-            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Wed, 06 May 2026 14:41:22 &#43;0800</lastBuildDate><atom:link href="https://nora-hshhh.github.io/posts/" rel="self" type="application/rss+xml" /><item>
+            <webMaster>norahuang408@gmail.com (Songhan Huang)</webMaster><lastBuildDate>Wed, 06 May 2026 14:41:22 &#43;0800</lastBuildDate><atom:link href="https://nora-hshhh.github.io/tags/%E8%AE%A1%E7%AE%97%E7%B3%BB%E7%BB%9F/" rel="self" type="application/rss+xml" /><item>
     <title>计算系统期中cheating sheet分享</title>
     <link>https://nora-hshhh.github.io/posts/computing-system-midterm/</link>
     <pubDate>Wed, 06 May 2026 14:41:22 &#43;0800</pubDate>
@@ -55,49 +55,6 @@
 </span></span><span class="line"><span class="cl"><span class="c1">// res 不能初始化成 a，否则 K=1 时会算成 a^2。
 </span></span></span></code></pre></div></div>
 <p>SCC</p>]]></description>
-</item>
-<item>
-    <title>五一平谷行记和一些巧思</title>
-    <link>https://nora-hshhh.github.io/posts/labor-day-traveling/</link>
-    <pubDate>Tue, 05 May 2026 17:28:22 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/labor-day-traveling/</guid>
-    <description><![CDATA[<h1 id="五一游记">五一游记</h1>
-<h2 id="前言">前言</h2>
-<p>今天是五一假期的最后一天，也是网站做好的第一天，于是乎想要提笔写点东西发上去好看一点，就打算从五一游记开写。</p>
-<p>有可能仍然是流水账的风格，或是一些八卦的记叙嘿嘿，不管怎样，只要开始写，都好。</p>]]></description>
-</item>
-<item>
-    <title>Life Thought Example</title>
-    <link>https://nora-hshhh.github.io/posts/life-thought-example/</link>
-    <pubDate>Tue, 05 May 2026 16:05:00 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/life-thought-example/</guid>
-    <description><![CDATA[<h1 id="life-thought-example">Life Thought Example</h1>
-<p>这里写生活感想。</p>
-<p>可以记录：</p>
-<ul>
-<li>最近发生的小事</li>
-<li>一段情绪或想法</li>
-<li>一次旅行、吃饭、穿搭、展览</li>
-<li>某个突然冒出来的灵感</li>
-</ul>]]></description>
-</item>
-<item>
-    <title>Course Note Example</title>
-    <link>https://nora-hshhh.github.io/posts/course-note-example/</link>
-    <pubDate>Fri, 01 May 2026 16:00:00 &#43;0800</pubDate>
-    <author>norahuang408@gmail.com (Songhan Huang)</author>
-    <guid>https://nora-hshhh.github.io/posts/course-note-example/</guid>
-    <description><![CDATA[<h1 id="course-note-example">Course Note Example</h1>
-<p>这里写课程笔记。</p>
-<p>可以记录：</p>
-<ul>
-<li>这节课的核心概念</li>
-<li>公式、推导或实验步骤</li>
-<li>自己还没想明白的问题</li>
-<li>后续复习时要看的资料</li>
-</ul>]]></description>
 </item>
 </channel>
 </rss>
