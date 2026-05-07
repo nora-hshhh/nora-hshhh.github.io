@@ -3,7 +3,7 @@ date = '2026-05-06T14:41:22+08:00'
 draft = false
 title = '计算系统期中cheating sheet分享'
 categories = ['课程笔记']
-tags = ['计算系统']
+tags = ['计算系统','学习笔记']
 +++
 
 # Computing System Midterm
